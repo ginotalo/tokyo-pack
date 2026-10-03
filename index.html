@@ -1,0 +1,2899 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#111318">
+<title>Tokyo Pack • 10 giorni</title>
+
+<style>
+:root{
+  --bg:#f4f1eb;
+  --surface:#fffdf9;
+  --surface2:#f0ece5;
+  --text:#17191d;
+  --muted:#77736c;
+  --line:#e4dfd6;
+  --accent:#17191d;
+  --accent2:#d95c43;
+  --green:#3f8060;
+  --yellow:#c28a25;
+  --red:#bd4d42;
+  --shadow:0 12px 35px rgba(30,25,20,.08);
+  --radius:22px;
+}
+
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  border:0;
+  cursor:pointer;
+}
+
+.app{
+  max-width:1180px;
+  margin:auto;
+  padding:20px;
+}
+
+/* HEADER */
+
+header{
+  padding:20px 4px 26px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:20px;
+}
+
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:11px;
+  color:var(--muted);
+  font-weight:700;
+}
+
+h1{
+  margin:5px 0 5px;
+  font-size:clamp(32px,7vw,58px);
+  line-height:.95;
+  letter-spacing:-.055em;
+}
+
+.subtitle{
+  color:var(--muted);
+  margin:0;
+}
+
+.header-actions{
+  display:flex;
+  gap:8px;
+}
+
+.icon-btn{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:var(--surface);
+  box-shadow:var(--shadow);
+  font-size:18px;
+}
+
+/* HERO */
+
+.hero{
+  background:#17191d;
+  color:white;
+  border-radius:30px;
+  padding:25px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 20px 45px rgba(0,0,0,.15);
+}
+
+.hero:after{
+  content:"";
+  width:250px;
+  height:250px;
+  position:absolute;
+  right:-90px;
+  top:-110px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 0 0 35px rgba(255,255,255,.025),
+             0 0 0 70px rgba(255,255,255,.02);
+}
+
+.hero-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+  position:relative;
+  z-index:1;
+}
+
+.hero h2{
+  margin:0 0 6px;
+  font-size:26px;
+}
+
+.hero p{
+  margin:0;
+  color:#aaaeb6;
+}
+
+.progress-number{
+  font-size:38px;
+  font-weight:800;
+  letter-spacing:-.05em;
+}
+
+.progress-track{
+  height:9px;
+  background:#33363d;
+  border-radius:20px;
+  margin-top:24px;
+  overflow:hidden;
+  position:relative;
+  z-index:1;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#d95c43,#eaa36d);
+  border-radius:20px;
+  transition:width .35s ease;
+}
+
+.stats{
+  display:flex;
+  gap:25px;
+  margin-top:17px;
+  position:relative;
+  z-index:1;
+  flex-wrap:wrap;
+}
+
+.stat strong{
+  display:block;
+  font-size:20px;
+}
+
+.stat span{
+  font-size:12px;
+  color:#999da5;
+}
+
+/* TOOLBAR */
+
+.toolbar{
+  margin:22px 0;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.search{
+  flex:1 1 230px;
+  position:relative;
+}
+
+.search input{
+  width:100%;
+  border:1px solid var(--line);
+  background:var(--surface);
+  border-radius:15px;
+  padding:14px 16px 14px 42px;
+  outline:none;
+}
+
+.search span{
+  position:absolute;
+  left:15px;
+  top:13px;
+  color:var(--muted);
+}
+
+.filter-group{
+  display:flex;
+  gap:5px;
+  background:var(--surface2);
+  padding:5px;
+  border-radius:15px;
+}
+
+.filter{
+  background:transparent;
+  color:var(--muted);
+  padding:9px 13px;
+  border-radius:11px;
+  font-size:13px;
+  font-weight:700;
+}
+
+.filter.active{
+  background:var(--surface);
+  color:var(--text);
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+/* SECTION */
+
+.section{
+  margin:28px 0;
+}
+
+.section-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+
+.section-heading h2{
+  margin:0;
+  font-size:20px;
+  letter-spacing:-.02em;
+}
+
+.section-heading span{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* BEFORE TRIP */
+
+.pretrip{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.pre-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:15px;
+  transition:.2s;
+}
+
+.pre-item.done{
+  opacity:.55;
+}
+
+.pre-item.done .pre-text{
+  text-decoration:line-through;
+}
+
+.check{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  border:2px solid #b8b3aa;
+  background:transparent;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-shrink:0;
+  color:white;
+  font-size:13px;
+}
+
+.check.checked{
+  background:var(--green);
+  border-color:var(--green);
+}
+
+.pre-text{
+  font-size:14px;
+  font-weight:600;
+}
+
+/* BAGS */
+
+.bags{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.bag{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:16px;
+  min-height:270px;
+  transition:.2s;
+}
+
+.bag.drag-over{
+  border-color:var(--accent2);
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(217,92,67,.15);
+}
+
+.bag-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.bag-name{
+  font-weight:800;
+  font-size:17px;
+}
+
+.bag-sub{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:3px;
+}
+
+.bag-icon{
+  font-size:34px;
+  line-height:1;
+}
+
+.weight{
+  margin-top:13px;
+  padding-top:12px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.weight strong{
+  color:var(--text);
+}
+
+.bag-items{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  margin-top:14px;
+}
+
+.empty{
+  padding:25px 8px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  border:1px dashed var(--line);
+  border-radius:15px;
+}
+
+/* ITEMS */
+
+.items{
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+}
+
+.item{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  transition:.2s;
+}
+
+.item:hover{
+  box-shadow:var(--shadow);
+}
+
+.item.done{
+  opacity:.55;
+}
+
+.item.done .item-name{
+  text-decoration:line-through;
+}
+
+.item-check{
+  width:27px;
+  height:27px;
+  flex-shrink:0;
+  border:2px solid #bbb6ae;
+  border-radius:9px;
+  background:transparent;
+  color:white;
+}
+
+.item-check.checked{
+  background:var(--green);
+  border-color:var(--green);
+}
+
+.item-main{
+  flex:1;
+  min-width:0;
+}
+
+.item-name{
+  font-weight:700;
+  font-size:14px;
+}
+
+.item-meta{
+  display:flex;
+  gap:7px;
+  margin-top:4px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.tag{
+  background:var(--surface2);
+  color:var(--muted);
+  border-radius:7px;
+  padding:3px 6px;
+  font-size:10px;
+  font-weight:700;
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.qty button{
+  width:29px;
+  height:29px;
+  border-radius:9px;
+  background:var(--surface2);
+}
+
+.qty-value{
+  min-width:20px;
+  text-align:center;
+  font-size:13px;
+  font-weight:800;
+}
+
+.item-actions{
+  display:flex;
+  gap:5px;
+}
+
+.small-btn{
+  width:32px;
+  height:32px;
+  border-radius:10px;
+  background:var(--surface2);
+  font-size:14px;
+}
+
+.small-btn.delete{
+  color:var(--red);
+}
+
+/* BAG ITEM */
+
+.bag-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:var(--surface2);
+  border-radius:12px;
+  padding:9px;
+  cursor:grab;
+  user-select:none;
+}
+
+.bag-item:active{
+  cursor:grabbing;
+}
+
+.bag-item-name{
+  flex:1;
+  min-width:0;
+  font-size:12px;
+  font-weight:700;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.bag-item-qty{
+  font-size:11px;
+  color:var(--muted);
+}
+
+.move-btn{
+  display:none;
+  border-radius:8px;
+  background:var(--surface);
+  font-size:11px;
+  padding:5px 7px;
+}
+
+/* CATEGORY */
+
+.category{
+  margin-bottom:22px;
+}
+
+.category-title{
+  font-size:13px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--muted);
+  margin:0 0 8px 4px;
+}
+
+/* ADD */
+
+.add-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:17px;
+}
+
+.form{
+  display:grid;
+  grid-template-columns:1fr 130px 160px auto;
+  gap:8px;
+}
+
+.form input,
+.form select{
+  min-width:0;
+  border:1px solid var(--line);
+  background:var(--bg);
+  border-radius:13px;
+  padding:12px;
+  outline:none;
+}
+
+.primary{
+  background:var(--accent);
+  color:white;
+  border-radius:13px;
+  padding:12px 18px;
+  font-weight:800;
+}
+
+.secondary{
+  background:var(--surface2);
+  color:var(--text);
+  border-radius:13px;
+  padding:12px 15px;
+  font-weight:700;
+}
+
+/* FOOTER */
+
+.footer-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:25px 0 10px;
+}
+
+/* MODAL */
+
+.modal-backdrop{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.48);
+  z-index:100;
+  padding:20px;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.modal-backdrop.show{
+  display:flex;
+}
+
+.modal{
+  width:min(500px,100%);
+  background:var(--surface);
+  border-radius:25px;
+  padding:20px;
+  box-shadow:0 25px 80px rgba(0,0,0,.25);
+  animation:slideUp .2s ease;
+}
+
+@keyframes slideUp{
+  from{transform:translateY(20px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+
+.modal h3{
+  margin:0 0 5px;
+}
+
+.modal p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.move-options{
+  display:grid;
+  gap:8px;
+  margin-top:15px;
+}
+
+.move-option{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:15px;
+  background:var(--surface2);
+  border-radius:15px;
+  text-align:left;
+}
+
+.move-option strong{
+  display:block;
+}
+
+.move-option span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* TOAST */
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:22px;
+  transform:translate(-50%,20px);
+  background:#17191d;
+  color:white;
+  padding:12px 17px;
+  border-radius:14px;
+  font-size:13px;
+  font-weight:700;
+  opacity:0;
+  pointer-events:none;
+  transition:.25s;
+  z-index:200;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* DARK */
+
+body.dark{
+  --bg:#101114;
+  --surface:#181a1f;
+  --surface2:#23252b;
+  --text:#f4f2ed;
+  --muted:#9b9da4;
+  --line:#303239;
+  --accent:#f4f2ed;
+  --green:#4d9a72;
+  --red:#e06a60;
+}
+
+body.dark .primary{
+  background:#f4f2ed;
+  color:#111318;
+}
+
+body.dark .hero{
+  background:#08090b;
+}
+
+body.dark .hero:after{
+  opacity:.5;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+  .app{
+    padding:13px;
+  }
+
+  header{
+    align-items:center;
+  }
+
+  .header-actions{
+    flex-shrink:0;
+  }
+
+  .bags{
+    grid-template-columns:1fr;
+  }
+
+  .bag{
+    min-height:0;
+  }
+
+  .bag-item .move-btn{
+    display:block;
+  }
+
+  .pretrip{
+    grid-template-columns:1fr;
+  }
+
+  .form{
+    grid-template-columns:1fr 90px;
+  }
+
+  .form input:first-child{
+    grid-column:1 / -1;
+  }
+
+  .form select{
+    width:100%;
+  }
+
+  .form .primary{
+    width:100%;
+  }
+
+  .item{
+    align-items:flex-start;
+  }
+
+  .item-main{
+    padding-top:2px;
+  }
+
+  .item-actions{
+    flex-direction:column;
+  }
+
+  .qty{
+    margin-left:auto;
+  }
+
+  .hero{
+    padding:20px;
+    border-radius:24px;
+  }
+
+  .progress-number{
+    font-size:31px;
+  }
+}
+
+@media(max-width:430px){
+  .app{
+    padding:10px;
+  }
+
+  h1{
+    font-size:36px;
+  }
+
+  .subtitle{
+    font-size:13px;
+  }
+
+  .toolbar{
+    flex-direction:column;
+  }
+
+  .filter-group{
+    width:100%;
+  }
+
+  .filter{
+    flex:1;
+  }
+
+  .item{
+    padding:10px;
+  }
+
+  .item-name{
+    font-size:13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <header>
+    <div>
+      <div class="eyebrow">TOKYO • OCTOBER</div>
+      <h1>Tokyo Pack</h1>
+      <p class="subtitle">10 giorni · 9 notti · 19 anni</p>
+    </div>
+
+    <div class="header-actions">
+      <button class="icon-btn" onclick="toggleDark()" title="Modalità scura">◐</button>
+    </div>
+  </header>
+
+  <!-- PROGRESS -->
+  <section class="hero">
+    <div class="hero-top">
+      <div>
+        <div class="eyebrow" style="color:#858991">PACKING STATUS</div>
+        <h2>Pronto per Tokyo?</h2>
+        <p id="progressText">0 elementi completati</p>
+      </div>
+
+      <div class="progress-number" id="progressPercent">0%</div>
+    </div>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <strong id="completedCount">0</strong>
+        <span>completati</span>
+      </div>
+
+      <div class="stat">
+        <strong id="totalCount">0</strong>
+        <span>totali</span>
+      </div>
+
+      <div class="stat">
+        <strong id="remainingCount">0</strong>
+        <span>mancanti</span>
+      </div>
+
+      <div class="stat">
+        <strong id="totalWeight">0 kg</strong>
+        <span>peso stimato</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <div class="toolbar">
+
+    <div class="search">
+      <span>⌕</span>
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Cerca un oggetto..."
+        oninput="render()"
+      >
+    </div>
+
+    <div class="filter-group">
+      <button class="filter active" data-filter="all" onclick="setFilter('all')">
+        Tutti
+      </button>
+
+      <button class="filter" data-filter="todo" onclick="setFilter('todo')">
+        Da fare
+      </button>
+
+      <button class="filter" data-filter="done" onclick="setFilter('done')">
+        Fatti
+      </button>
+    </div>
+
+  </div>
+
+  <!-- PRIMA DEL VIAGGIO -->
+  <section class="section">
+    <div class="section-heading">
+      <h2>Prima della partenza</h2>
+      <span id="preProgress">0/0</span>
+    </div>
+
+    <div class="pretrip" id="pretrip"></div>
+  </section>
+
+  <!-- BAGAGLI -->
+  <section class="section">
+
+    <div class="section-heading">
+      <h2>I tuoi bagagli</h2>
+      <span>Trascina gli oggetti tra i bagagli</span>
+    </div>
+
+    <div class="bags">
+
+      <div
+        class="bag"
+        data-bag="checked"
+        ondragover="allowDrop(event)"
+        ondragleave="leaveDrop(event)"
+        ondrop="dropItem(event,'checked')"
+      >
+        <div class="bag-head">
+          <div>
+            <div class="bag-name">🧳 Valigia grande</div>
+            <div class="bag-sub">Stiva · max 23 kg</div>
+          </div>
+          <div class="bag-icon">🧳</div>
+        </div>
+
+        <div class="weight">
+          <span>Peso stimato</span>
+          <strong id="weight-checked">0 kg</strong>
+        </div>
+
+        <div class="bag-items" id="bag-checked"></div>
+      </div>
+
+
+      <div
+        class="bag"
+        data-bag="cabin"
+        ondragover="allowDrop(event)"
+        ondragleave="leaveDrop(event)"
+        ondrop="dropItem(event,'cabin')"
+      >
+        <div class="bag-head">
+          <div>
+            <div class="bag-name">🧳 Valigia cabina</div>
+            <div class="bag-sub">Cabin · max 10 kg</div>
+          </div>
+          <div class="bag-icon">🛫</div>
+        </div>
+
+        <div class="weight">
+          <span>Peso stimato</span>
+          <strong id="weight-cabin">0 kg</strong>
+        </div>
+
+        <div class="bag-items" id="bag-cabin"></div>
+      </div>
+
+
+      <div
+        class="bag"
+        data-bag="backpack"
+        ondragover="allowDrop(event)"
+        ondragleave="leaveDrop(event)"
+        ondrop="dropItem(event,'backpack')"
+      >
+        <div class="bag-head">
+          <div>
+            <div class="bag-name">🎒 Zaino</div>
+            <div class="bag-sub">Personale · uso quotidiano</div>
+          </div>
+          <div class="bag-icon">🎒</div>
+        </div>
+
+        <div class="weight">
+          <span>Peso stimato</span>
+          <strong id="weight-backpack">0 kg</strong>
+        </div>
+
+        <div class="bag-items" id="bag-backpack"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LISTA -->
+  <section class="section">
+
+    <div class="section-heading">
+      <h2>Lista da preparare</h2>
+      <span id="visibleCount"></span>
+    </div>
+
+    <div id="itemsContainer"></div>
+
+  </section>
+
+  <!-- AGGIUNGI -->
+  <section class="section">
+
+    <div class="section-heading">
+      <h2>Aggiungi qualcosa</h2>
+    </div>
+
+    <div class="add-card">
+
+      <div class="form">
+
+        <input
+          id="newName"
+          type="text"
+          placeholder="Es. adattatore universale"
+        >
+
+        <input
+          id="newQty"
+          type="number"
+          min="1"
+          value="1"
+          placeholder="Qtà"
+        >
+
+        <select id="newBag">
+          <option value="checked">🧳 Valigia grande</option>
+          <option value="cabin">🛫 Valigia cabina</option>
+          <option value="backpack">🎒 Zaino</option>
+        </select>
+
+        <button class="primary" onclick="addItem()">
+          + Aggiungi
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER ACTIONS -->
+
+  <div class="footer-actions">
+
+    <button class="secondary" onclick="resetCompleted()">
+      ↻ Azzera checklist
+    </button>
+
+    <button class="secondary" onclick="resetBags()">
+      ↺ Ripristina bagagli
+    </button>
+
+    <button class="secondary" onclick="exportList()">
+      ↓ Esporta lista
+    </button>
+
+    <button class="secondary" onclick="resetEverything()">
+      ⚠ Reset completo
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- MOVE MODAL -->
+
+<div class="modal-backdrop" id="moveModal">
+
+  <div class="modal">
+
+    <h3>Sposta oggetto</h3>
+
+    <p id="moveItemName"></p>
+
+    <div class="move-options">
+
+      <button class="move-option" onclick="moveFromModal('checked')">
+        <span style="font-size:25px">🧳</span>
+        <div>
+          <strong>Valigia grande</strong>
+          <span>Stiva · massimo 23 kg</span>
+        </div>
+      </button>
+
+      <button class="move-option" onclick="moveFromModal('cabin')">
+        <span style="font-size:25px">🛫</span>
+        <div>
+          <strong>Valigia cabina</strong>
+          <span>Bagaglio a mano</span>
+        </div>
+      </button>
+
+      <button class="move-option" onclick="moveFromModal('backpack')">
+        <span style="font-size:25px">🎒</span>
+        <div>
+          <strong>Zaino</strong>
+          <span>Oggetti personali</span>
+        </div>
+      </button>
+
+    </div>
+
+    <button
+      class="secondary"
+      style="width:100%;margin-top:12px"
+      onclick="closeMoveModal()"
+    >
+      Annulla
+    </button>
+
+  </div>
+
+</div>
+
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* =========================================================
+   DATI INIZIALI
+========================================================= */
+
+const initialItems = [
+
+  /* ABBIGLIAMENTO */
+
+  {
+    id:"tshirt",
+    name:"T-shirt",
+    category:"Abbigliamento",
+    qty:7,
+    bag:"checked",
+    weight:.18
+  },
+
+  {
+    id:"longshirt",
+    name:"Maglie maniche lunghe",
+    category:"Abbigliamento",
+    qty:2,
+    bag:"checked",
+    weight:.25
+  },
+
+  {
+    id:"hoodie",
+    name:"Felpa",
+    category:"Abbigliamento",
+    qty:2,
+    bag:"checked",
+    weight:.55
+  },
+
+  {
+    id:"jacket",
+    name:"Giacca leggera",
+    category:"Abbigliamento",
+    qty:1,
+    bag:"checked",
+    weight:.7
+  },
+
+  {
+    id:"pants",
+    name:"Pantaloni lunghi",
+    category:"Abbigliamento",
+    qty:2,
+    bag:"checked",
+    weight:.55
+  },
+
+  {
+    id:"jeans",
+    name:"Jeans",
+    category:"Abbigliamento",
+    qty:1,
+    bag:"checked",
+    weight:.7
+  },
+
+  {
+    id:"shorts",
+    name:"Pantaloncini",
+    category:"Abbigliamento",
+    qty:2,
+    bag:"checked",
+    weight:.25
+  },
+
+  {
+    id:"underwear",
+    name:"Mutande",
+    category:"Intimo",
+    qty:10,
+    bag:"checked",
+    weight:.06
+  },
+
+  {
+    id:"socks",
+    name:"Calze",
+    category:"Intimo",
+    qty:10,
+    bag:"checked",
+    weight:.04
+  },
+
+  {
+    id:"sleep",
+    name:"Pigiama",
+    category:"Intimo",
+    qty:1,
+    bag:"checked",
+    weight:.35
+  },
+
+  /* SCARPE */
+
+  {
+    id:"sneakers",
+    name:"Sneakers",
+    category:"Scarpe",
+    qty:1,
+    bag:"checked",
+    weight:.9
+  },
+
+  {
+    id:"comfortable",
+    name:"Scarpe comode per camminare",
+    category:"Scarpe",
+    qty:1,
+    bag:"checked",
+    weight:.8
+  },
+
+  {
+    id:"sandals",
+    name:"Ciabatte",
+    category:"Scarpe",
+    qty:1,
+    bag:"checked",
+    weight:.3
+  },
+
+  /* IGIENE */
+
+  {
+    id:"toothbrush",
+    name:"Spazzolino",
+    category:"Igiene",
+    qty:1,
+    bag:"backpack",
+    weight:.05
+  },
+
+  {
+    id:"toothpaste",
+    name:"Dentifricio",
+    category:"Igiene",
+    qty:1,
+    bag:"backpack",
+    weight:.1
+  },
+
+  {
+    id:"deodorant",
+    name:"Deodorante",
+    category:"Igiene",
+    qty:1,
+    bag:"checked",
+    weight:.15
+  },
+
+  {
+    id:"shampoo",
+    name:"Shampoo",
+    category:"Igiene",
+    qty:1,
+    bag:"checked",
+    weight:.25
+  },
+
+  {
+    id:"shower",
+    name:"Docciaschiuma",
+    category:"Igiene",
+    qty:1,
+    bag:"checked",
+    weight:.25
+  },
+
+  {
+    id:"skincare",
+    name:"Crema viso / skincare",
+    category:"Igiene",
+    qty:1,
+    bag:"checked",
+    weight:.2
+  },
+
+  {
+    id:"perfume",
+    name:"Profumo",
+    category:"Igiene",
+    qty:1,
+    bag:"checked",
+    weight:.15
+  },
+
+  {
+    id:"razor",
+    name:"Rasoio",
+    category:"Igiene",
+    qty:1,
+    bag:"checked",
+    weight:.1
+  },
+
+  /* TECNOLOGIA */
+
+  {
+    id:"phone",
+    name:"Smartphone",
+    category:"Tecnologia",
+    qty:1,
+    bag:"backpack",
+    weight:.2
+  },
+
+  {
+    id:"charger",
+    name:"Caricatore smartphone",
+    category:"Tecnologia",
+    qty:1,
+    bag:"backpack",
+    weight:.15
+  },
+
+  {
+    id:"powerbank",
+    name:"Power bank",
+    category:"Tecnologia",
+    qty:1,
+    bag:"backpack",
+    weight:.25
+  },
+
+  {
+    id:"earbuds",
+    name:"Cuffie / AirPods",
+    category:"Tecnologia",
+    qty:1,
+    bag:"backpack",
+    weight:.05
+  },
+
+  {
+    id:"cables",
+    name:"Cavi USB",
+    category:"Tecnologia",
+    qty:1,
+    bag:"backpack",
+    weight:.12
+  },
+
+  {
+    id:"adapter",
+    name:"Adattatore presa",
+    category:"Tecnologia",
+    qty:1,
+    bag:"backpack",
+    weight:.15
+  },
+
+  {
+    id:"camera",
+    name:"Fotocamera",
+    category:"Tecnologia",
+    qty:1,
+    bag:"cabin",
+    weight:.7
+  },
+
+  /* VIAGGIO */
+
+  {
+    id:"passport",
+    name:"Passaporto",
+    category:"Documenti",
+    qty:1,
+    bag:"backpack",
+    weight:.05
+  },
+
+  {
+    id:"wallet",
+    name:"Portafoglio",
+    category:"Documenti",
+    qty:1,
+    bag:"backpack",
+    weight:.1
+  },
+
+  {
+    id:"cards",
+    name:"Carte / contanti yen",
+    category:"Documenti",
+    qty:1,
+    bag:"backpack",
+    weight:.05
+  },
+
+  {
+    id:"copies",
+    name:"Copie documenti importanti",
+    category:"Documenti",
+    qty:1,
+    bag:"backpack",
+    weight:.05
+  },
+
+  /* COMFORT */
+
+  {
+    id:"umbrella",
+    name:"Ombrello pieghevole",
+    category:"Accessori",
+    qty:1,
+    bag:"backpack",
+    weight:.3
+  },
+
+  {
+    id:"sunglasses",
+    name:"Occhiali da sole",
+    category:"Accessori",
+    qty:1,
+    bag:"backpack",
+    weight:.05
+  },
+
+  {
+    id:"cap",
+    name:"Cappellino",
+    category:"Accessori",
+    qty:1,
+    bag:"checked",
+    weight:.08
+  },
+
+  {
+    id:"daybag",
+    name:"Borsa/zainetto per Tokyo",
+    category:"Accessori",
+    qty:1,
+    bag:"checked",
+    weight:.3
+  },
+
+  {
+    id:"laundry",
+    name:"Sacchetto per biancheria sporca",
+    category:"Accessori",
+    qty:1,
+    bag:"checked",
+    weight:.08
+  },
+
+  {
+    id:"bottle",
+    name:"Borraccia",
+    category:"Accessori",
+    qty:1,
+    bag:"backpack",
+    weight:.25
+  }
+
+];
+
+
+/* =========================================================
+   COSE DA FARE PRIMA
+========================================================= */
+
+const preTripItems = [
+
+  {id:"pre-passport",name:"Controllare passaporto"},
+  {id:"pre-flight",name:"Controllare voli"},
+  {id:"pre-hotel",name:"Controllare prenotazione hotel"},
+  {id:"pre-insurance",name:"Controllare assicurazione viaggio"},
+  {id:"pre-money",name:"Preparare yen / carte"},
+  {id:"pre-esim",name:"Preparare SIM / eSIM"},
+  {id:"pre-docs",name:"Salvare copie dei documenti"},
+  {id:"pre-charger",name:"Caricare power bank"},
+  {id:"pre-download",name:"Scaricare mappe offline"},
+  {id:"pre-weather",name:"Controllare meteo di Tokyo"},
+  {id:"pre-luggage",name:"Pesare i bagagli"},
+  {id:"pre-home",name:"Controllare casa prima di partire"}
+
+];
+
+
+/* =========================================================
+   STORAGE
+========================================================= */
+
+const STORAGE_KEY = "tokyo_pack_v4";
+
+let state = loadState();
+
+let currentFilter = "all";
+let draggedId = null;
+let modalItemId = null;
+
+
+/* =========================================================
+   STATO INIZIALE
+========================================================= */
+
+function defaultState(){
+
+  return {
+
+    completed:{},
+
+    removed:{},
+
+    customItems:[],
+
+    quantities:{},
+
+    bagPositions:{},
+
+    preCompleted:{},
+
+    dark:false
+
+  };
+
+}
+
+
+/* =========================================================
+   CARICAMENTO
+========================================================= */
+
+function loadState(){
+
+  try{
+
+    const saved = localStorage.getItem(STORAGE_KEY);
+
+    if(!saved){
+
+      return defaultState();
+
+    }
+
+    const parsed = JSON.parse(saved);
+
+    return {
+
+      ...defaultState(),
+
+      ...parsed,
+
+      completed:parsed.completed || {},
+
+      removed:parsed.removed || {},
+
+      customItems:parsed.customItems || [],
+
+      quantities:parsed.quantities || {},
+
+      bagPositions:parsed.bagPositions || {},
+
+      preCompleted:parsed.preCompleted || {}
+
+    };
+
+  }catch(error){
+
+    console.error(error);
+
+    return defaultState();
+
+  }
+
+}
+
+
+/* =========================================================
+   SALVATAGGIO
+========================================================= */
+
+function save(){
+
+  localStorage.setItem(
+
+    STORAGE_KEY,
+
+    JSON.stringify(state)
+
+  );
+
+}
+
+
+/* =========================================================
+   TUTTI GLI OGGETTI
+========================================================= */
+
+function getAllItems(){
+
+  const originals = initialItems.map(item => {
+
+    const copy = {...item};
+
+    copy.qty = state.quantities[item.id] ?? item.qty;
+
+    copy.bag = state.bagPositions[item.id] ?? item.bag;
+
+    copy.done = !!state.completed[item.id];
+
+    return copy;
+
+  });
+
+
+  const custom = state.customItems.map(item => {
+
+    const copy = {...item};
+
+    copy.qty = state.quantities[item.id] ?? item.qty;
+
+    copy.bag = state.bagPositions[item.id] ?? item.bag;
+
+    copy.done = !!state.completed[item.id];
+
+    return copy;
+
+  });
+
+
+  return [...originals,...custom]
+
+    .filter(item => !state.removed[item.id]);
+
+}
+
+
+/* =========================================================
+   RENDER PRINCIPALE
+========================================================= */
+
+function render(){
+
+  renderPreTrip();
+
+  renderItems();
+
+  renderBags();
+
+  updateProgress();
+
+}
+
+
+/* =========================================================
+   FILTRO
+========================================================= */
+
+function setFilter(filter){
+
+  currentFilter = filter;
+
+  document
+    .querySelectorAll(".filter")
+    .forEach(button => {
+
+      button.classList.toggle(
+
+        "active",
+
+        button.dataset.filter === filter
+
+      );
+
+    });
+
+  renderItems();
+
+}
+
+
+/* =========================================================
+   RICERCA / FILTRO
+========================================================= */
+
+function filteredItems(){
+
+  const query = (
+
+    document.getElementById("searchInput").value || ""
+
+  ).toLowerCase().trim();
+
+
+  return getAllItems().filter(item => {
+
+    const matchesSearch =
+
+      !query ||
+
+      item.name.toLowerCase().includes(query) ||
+
+      item.category.toLowerCase().includes(query);
+
+
+    const matchesFilter =
+
+      currentFilter === "all" ||
+
+      (currentFilter === "done" && item.done) ||
+
+      (currentFilter === "todo" && !item.done);
+
+
+    return matchesSearch && matchesFilter;
+
+  });
+
+}
+
+
+/* =========================================================
+   RENDER LISTA
+========================================================= */
+
+function renderItems(){
+
+  const container = document.getElementById("itemsContainer");
+
+  const items = filteredItems();
+
+  container.innerHTML = "";
+
+  document.getElementById("visibleCount").textContent =
+
+    `${items.length} elementi`;
+
+
+  if(items.length === 0){
+
+    container.innerHTML = `
+
+      <div class="empty">
+
+        Nessun elemento trovato.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  const categories = [];
+
+  items.forEach(item => {
+
+    if(!categories.includes(item.category)){
+
+      categories.push(item.category);
+
+    }
+
+  });
+
+
+  categories.forEach(category => {
+
+    const categoryItems =
+
+      items.filter(item => item.category === category);
+
+
+    const wrapper = document.createElement("div");
+
+    wrapper.className = "category";
+
+
+    wrapper.innerHTML = `
+
+      <div class="category-title">
+
+        ${escapeHtml(category)}
+
+      </div>
+
+      <div class="items"></div>
+
+    `;
+
+
+    const list = wrapper.querySelector(".items");
+
+
+    categoryItems.forEach(item => {
+
+      list.appendChild(createItemElement(item));
+
+    });
+
+
+    container.appendChild(wrapper);
+
+  });
+
+}
+
+
+/* =========================================================
+   CREA ITEM
+========================================================= */
+
+function createItemElement(item){
+
+  const el = document.createElement("div");
+
+  el.className = "item" + (item.done ? " done" : "");
+
+  el.draggable = true;
+
+  el.addEventListener("dragstart",event => {
+
+    draggedId = item.id;
+
+    event.dataTransfer.effectAllowed = "move";
+
+  });
+
+
+  el.addEventListener("dragend",() => {
+
+    draggedId = null;
+
+  });
+
+
+  el.innerHTML = `
+
+    <button
+      class="item-check ${item.done ? "checked" : ""}"
+      onclick="toggleItem('${item.id}')"
+    >
+      ${item.done ? "✓" : ""}
+    </button>
+
+    <div class="item-main">
+
+      <div class="item-name">
+
+        ${escapeHtml(item.name)}
+
+      </div>
+
+      <div class="item-meta">
+
+        <span class="tag">${escapeHtml(item.category)}</span>
+
+        <span class="tag">
+
+          ${bagLabel(item.bag)}
+
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="qty">
+
+      <button onclick="changeQty('${item.id}',-1)">
+        −
+      </button>
+
+      <span class="qty-value">${item.qty}</span>
+
+      <button onclick="changeQty('${item.id}',1)">
+        +
+      </button>
+
+    </div>
+
+
+    <div class="item-actions">
+
+      <button
+        class="small-btn"
+        title="Sposta"
+        onclick="openMoveModal('${item.id}')"
+      >
+        ⇄
+      </button>
+
+      <button
+        class="small-btn delete"
+        title="Elimina"
+        onclick="deleteItem('${item.id}')"
+      >
+        ×
+      </button>
+
+    </div>
+
+  `;
+
+  return el;
+
+}
+
+
+/* =========================================================
+   BAGAGLI
+========================================================= */
+
+function renderBags(){
+
+  const bags = {
+
+    checked:document.getElementById("bag-checked"),
+
+    cabin:document.getElementById("bag-cabin"),
+
+    backpack:document.getElementById("bag-backpack")
+
+  };
+
+
+  Object.values(bags).forEach(el => {
+
+    el.innerHTML = "";
+
+  });
+
+
+  const all = getAllItems();
+
+
+  ["checked","cabin","backpack"].forEach(bag => {
+
+    const items = all.filter(item => item.bag === bag);
+
+    const container = bags[bag];
+
+
+    if(items.length === 0){
+
+      container.innerHTML = `
+
+        <div class="empty">
+
+          Trascina qui gli oggetti
+
+        </div>
+
+      `;
+
+      return;
+
+    }
+
+
+    items.forEach(item => {
+
+      const element = document.createElement("div");
+
+      element.className = "bag-item";
+
+      element.draggable = true;
+
+
+      element.addEventListener("dragstart",event => {
+
+        draggedId = item.id;
+
+        event.dataTransfer.effectAllowed = "move";
+
+      });
+
+
+      element.addEventListener("dragend",() => {
+
+        draggedId = null;
+
+      });
+
+
+      element.innerHTML = `
+
+        <span>•</span>
+
+        <span class="bag-item-name">
+
+          ${escapeHtml(item.name)}
+
+        </span>
+
+        <span class="bag-item-qty">
+
+          ×${item.qty}
+
+        </span>
+
+        <button
+          class="move-btn"
+          onclick="openMoveModal('${item.id}')"
+        >
+          Sposta
+        </button>
+
+      `;
+
+
+      container.appendChild(element);
+
+    });
+
+  });
+
+
+  updateWeights();
+
+}
+
+
+/* =========================================================
+   DRAG & DROP
+========================================================= */
+
+function allowDrop(event){
+
+  event.preventDefault();
+
+  const bag = event.currentTarget;
+
+  bag.classList.add("drag-over");
+
+}
+
+
+function leaveDrop(event){
+
+  event.currentTarget.classList.remove("drag-over");
+
+}
+
+
+function dropItem(event,bag){
+
+  event.preventDefault();
+
+  event.currentTarget.classList.remove("drag-over");
+
+
+  if(!draggedId){
+
+    return;
+
+  }
+
+
+  moveItem(draggedId,bag);
+
+  draggedId = null;
+
+}
+
+
+/* =========================================================
+   SPOSTAMENTO
+========================================================= */
+
+function moveItem(id,bag){
+
+  const item = getAllItems().find(x => x.id === id);
+
+  if(!item){
+
+    return;
+
+  }
+
+
+  state.bagPositions[id] = bag;
+
+  save();
+
+  render();
+
+  showToast(
+
+    `${item.name} → ${bagLabel(bag)}`
+
+  );
+
+}
+
+
+/* =========================================================
+   MODAL SPOSTAMENTO
+========================================================= */
+
+function openMoveModal(id){
+
+  const item = getAllItems().find(x => x.id === id);
+
+  if(!item){
+
+    return;
+
+  }
+
+
+  modalItemId = id;
+
+  document.getElementById("moveItemName").textContent =
+
+    item.name;
+
+
+  document
+
+    .getElementById("moveModal")
+
+    .classList.add("show");
+
+}
+
+
+function closeMoveModal(){
+
+  modalItemId = null;
+
+  document
+
+    .getElementById("moveModal")
+
+    .classList.remove("show");
+
+}
+
+
+function moveFromModal(bag){
+
+  if(!modalItemId){
+
+    return;
+
+  }
+
+
+  moveItem(modalItemId,bag);
+
+  closeMoveModal();
+
+}
+
+
+/* =========================================================
+   CHECK ITEM
+========================================================= */
+
+function toggleItem(id){
+
+  state.completed[id] = !state.completed[id];
+
+  save();
+
+  render();
+
+}
+
+
+/* =========================================================
+   QUANTITA'
+========================================================= */
+
+function changeQty(id,delta){
+
+  const item = getAllItems().find(x => x.id === id);
+
+  if(!item){
+
+    return;
+
+  }
+
+
+  const current = item.qty;
+
+  const next = Math.max(1,current + delta);
+
+
+  state.quantities[id] = next;
+
+  save();
+
+  render();
+
+}
+
+
+/* =========================================================
+   ELIMINA
+========================================================= */
+
+function deleteItem(id){
+
+  const item = getAllItems().find(x => x.id === id);
+
+  if(!item){
+
+    return;
+
+  }
+
+
+  const confirmed = confirm(
+
+    `Vuoi eliminare "${item.name}" dalla lista?`
+
+  );
+
+
+  if(!confirmed){
+
+    return;
+
+  }
+
+
+  state.removed[id] = true;
+
+  delete state.completed[id];
+
+  delete state.quantities[id];
+
+  delete state.bagPositions[id];
+
+  save();
+
+  render();
+
+  showToast("Elemento eliminato");
+
+}
+
+
+/* =========================================================
+   AGGIUNGI
+========================================================= */
+
+function addItem(){
+
+  const nameInput = document.getElementById("newName");
+
+  const qtyInput = document.getElementById("newQty");
+
+  const bagInput = document.getElementById("newBag");
+
+
+  const name = nameInput.value.trim();
+
+  const qty = Math.max(
+
+    1,
+
+    parseInt(qtyInput.value,10) || 1
+
+  );
+
+  const bag = bagInput.value;
+
+
+  if(!name){
+
+    showToast("Inserisci il nome dell'oggetto");
+
+    nameInput.focus();
+
+    return;
+
+  }
+
+
+  const id =
+
+    "custom-" +
+
+    Date.now() +
+
+    "-" +
+
+    Math.random().toString(36).slice(2,8);
+
+
+  const item = {
+
+    id,
+
+    name,
+
+    category:"Personalizzato",
+
+    qty,
+
+    bag,
+
+    weight:.15
+
+  };
+
+
+  state.customItems.push(item);
+
+  state.bagPositions[id] = bag;
+
+  state.quantities[id] = qty;
+
+
+  save();
+
+
+  nameInput.value = "";
+
+  qtyInput.value = 1;
+
+
+  render();
+
+  showToast("Elemento aggiunto");
+
+}
+
+
+/* =========================================================
+   PRE-TRIP
+========================================================= */
+
+function renderPreTrip(){
+
+  const container = document.getElementById("pretrip");
+
+  container.innerHTML = "";
+
+
+  let completed = 0;
+
+
+  preTripItems.forEach(item => {
+
+    const done = !!state.preCompleted[item.id];
+
+    if(done){
+
+      completed++;
+
+    }
+
+
+    const el = document.createElement("div");
+
+    el.className = "pre-item" + (done ? " done" : "");
+
+
+    el.innerHTML = `
+
+      <button
+        class="check ${done ? "checked" : ""}"
+        onclick="togglePre('${item.id}')"
+      >
+        ${done ? "✓" : ""}
+      </button>
+
+      <div class="pre-text">
+
+        ${escapeHtml(item.name)}
+
+      </div>
+
+    `;
+
+
+    container.appendChild(el);
+
+  });
+
+
+  document.getElementById("preProgress").textContent =
+
+    `${completed}/${preTripItems.length}`;
+
+}
+
+
+function togglePre(id){
+
+  state.preCompleted[id] = !state.preCompleted[id];
+
+  save();
+
+  renderPreTrip();
+
+}
+
+
+/* =========================================================
+   PROGRESSO
+========================================================= */
+
+function updateProgress(){
+
+  const items = getAllItems();
+
+  const total = items.length;
+
+  const completed = items.filter(item => item.done).length;
+
+  const remaining = total - completed;
+
+  const percentage = total
+
+    ? Math.round(completed / total * 100)
+
+    : 0;
+
+
+  document.getElementById("completedCount").textContent =
+
+    completed;
+
+
+  document.getElementById("totalCount").textContent =
+
+    total;
+
+
+  document.getElementById("remainingCount").textContent =
+
+    remaining;
+
+
+  document.getElementById("progressPercent").textContent =
+
+    `${percentage}%`;
+
+
+  document.getElementById("progressFill").style.width =
+
+    `${percentage}%`;
+
+
+  document.getElementById("progressText").textContent =
+
+    `${completed} di ${total} elementi completati`;
+
+
+  document.getElementById("totalWeight").textContent =
+
+    `${calculateTotalWeight().toFixed(1)} kg`;
+
+}
+
+
+/* =========================================================
+   PESI
+========================================================= */
+
+function calculateBagWeight(bag){
+
+  return getAllItems()
+
+    .filter(item => item.bag === bag)
+
+    .reduce(
+
+      (sum,item) =>
+
+        sum + item.weight * item.qty,
+
+      0
+
+    );
+
+}
+
+
+function calculateTotalWeight(){
+
+  return (
+
+    calculateBagWeight("checked") +
+
+    calculateBagWeight("cabin") +
+
+    calculateBagWeight("backpack")
+
+  );
+
+}
+
+
+function updateWeights(){
+
+  const checked = calculateBagWeight("checked");
+
+  const cabin = calculateBagWeight("cabin");
+
+  const backpack = calculateBagWeight("backpack");
+
+
+  document.getElementById("weight-checked").textContent =
+
+    `${checked.toFixed(1)} kg`;
+
+
+  document.getElementById("weight-cabin").textContent =
+
+    `${cabin.toFixed(1)} kg`;
+
+
+  document.getElementById("weight-backpack").textContent =
+
+    `${backpack.toFixed(1)} kg`;
+
+}
+
+
+/* =========================================================
+   RESET CHECKLIST
+========================================================= */
+
+function resetCompleted(){
+
+  if(!confirm("Vuoi segnare tutti gli oggetti come da fare?")){
+
+    return;
+
+  }
+
+
+  state.completed = {};
+
+  state.preCompleted = {};
+
+  save();
+
+  render();
+
+  showToast("Checklist azzerata");
+
+}
+
+
+/* =========================================================
+   RESET BAGAGLI
+========================================================= */
+
+function resetBags(){
+
+  if(!confirm("Vuoi ripristinare la posizione originale degli oggetti?")){
+
+    return;
+
+  }
+
+
+  state.bagPositions = {};
+
+  save();
+
+  render();
+
+  showToast("Bagagli ripristinati");
+
+}
+
+
+/* =========================================================
+   RESET COMPLETO
+========================================================= */
+
+function resetEverything(){
+
+  if(!confirm(
+
+    "ATTENZIONE: verranno cancellate tutte le modifiche. Continuare?"
+
+  )){
+
+    return;
+
+  }
+
+
+  localStorage.removeItem(STORAGE_KEY);
+
+  state = defaultState();
+
+  render();
+
+  showToast("App completamente ripristinata");
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+function toggleDark(){
+
+  state.dark = !state.dark;
+
+  document.body.classList.toggle("dark",state.dark);
+
+  save();
+
+}
+
+
+/* =========================================================
+   ESPORTA
+========================================================= */
+
+function exportList(){
+
+  const items = getAllItems();
+
+
+  let text =
+
+`TOKYO PACK
+10 giorni · 9 notti
+Tokyo · Ottobre
+
+========================
+
+BAGAGLIO
+
+`;
+
+
+  const bags = {
+
+    checked:"VALIGIA GRANDE",
+
+    cabin:"VALIGIA CABINA",
+
+    backpack:"ZAINO"
+
+  };
+
+
+  Object.entries(bags).forEach(([bag,label]) => {
+
+    text += `\n${label}\n`;
+
+    text += "------------------------\n";
+
+
+    items
+
+      .filter(item => item.bag === bag)
+
+      .forEach(item => {
+
+        text +=
+
+          `${item.done ? "[x]" : "[ ]"} ` +
+
+          `${item.name} ×${item.qty}\n`;
+
+      });
+
+  });
+
+
+  text +=
+
+`\n========================
+
+PRIMA DELLA PARTENZA
+
+`;
+
+
+  preTripItems.forEach(item => {
+
+    text +=
+
+      `${state.preCompleted[item.id] ? "[x]" : "[ ]"} ` +
+
+      `${item.name}\n`;
+
+  });
+
+
+  const blob = new Blob(
+
+    [text],
+
+    {type:"text/plain;charset=utf-8"}
+
+  );
+
+
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+
+  a.href = url;
+
+  a.download = "Tokyo-Pack.txt";
+
+  a.click();
+
+  URL.revokeObjectURL(url);
+
+  showToast("Lista esportata");
+
+}
+
+
+/* =========================================================
+   LABEL BAGAGLI
+========================================================= */
+
+function bagLabel(bag){
+
+  const labels = {
+
+    checked:"🧳 Grande",
+
+    cabin:"🛫 Cabina",
+
+    backpack:"🎒 Zaino"
+
+  };
+
+
+  return labels[bag] || bag;
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHtml(value){
+
+  return String(value)
+
+    .replaceAll("&","&amp;")
+
+    .replaceAll("<","&lt;")
+
+    .replaceAll(">","&gt;")
+
+    .replaceAll('"',"&quot;")
+
+    .replaceAll("'","&#039;");
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+
+function showToast(message){
+
+  const toast = document.getElementById("toast");
+
+  toast.textContent = message;
+
+  toast.classList.add("show");
+
+
+  clearTimeout(toastTimer);
+
+
+  toastTimer = setTimeout(() => {
+
+    toast.classList.remove("show");
+
+  },2200);
+
+}
+
+
+/* =========================================================
+   CLICK FUORI DAL MODAL
+========================================================= */
+
+document
+
+  .getElementById("moveModal")
+
+  .addEventListener("click",event => {
+
+    if(event.target.id === "moveModal"){
+
+      closeMoveModal();
+
+    }
+
+  });
+
+
+/* =========================================================
+   ENTER PER AGGIUNGERE
+========================================================= */
+
+document
+
+  .getElementById("newName")
+
+  .addEventListener("keydown",event => {
+
+    if(event.key === "Enter"){
+
+      addItem();
+
+    }
+
+  });
+
+
+/* =========================================================
+   TEMA SALVATO
+========================================================= */
+
+if(state.dark){
+
+  document.body.classList.add("dark");
+
+}
+
+
+/* =========================================================
+   AVVIO
+========================================================= */
+
+render();
+
+</script>
+
+</body>
+</html>
